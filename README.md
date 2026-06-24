@@ -12,9 +12,9 @@ All three datasets used in this project were accessed online through public down
 
 | Dataset | Description | Size |
 |---|---|---|
-| `Video_Review` | Collection of information that was created based on reviewable video evidence that outlines the events that resulted in a concussion during punt players in the NFL 2016-2017 season. | 37 entries |
-| `InjuryRecord` | Accounts for lower-limbs injuries that occurred over two NFL regular seasons. Provides information on the surface the game occurred on and the number of days the player missed due to injury.| 105 enteries |
-| `Concussion` | Contains a list of concussion injuries that occurred in the NFL from the years 2012 to 2014. | 390 enteries |
+| `Video_Review` | Collection of information that was created based on reviewable video evidence that outlines the events that resulted in a concussion during punt players in the NFL 2016-2017 season. Target:'Primary_Impact_Type'| 37 entries |
+| `InjuryRecord` | Accounts for lower-limbs injuries that occurred over two NFL regular seasons. Provides information on the surface the game occurred on and the number of days the player missed due to injury. Target: 'Surface'| 105 enteries |
+| `Concussion` | Contains a list of concussion injuries that occurred in the NFL from the years 2012 to 2014. Target: 'Reported_Injury_Type'| 390 enteries |
 
 
 ### Methods
@@ -85,16 +85,65 @@ All three datasets used in this project were accessed online through public down
 | `Concussion` | PCR | 0.3513 |
 | `Concussion` | PLSR | 0.3498 |
 
-### What Worked
-- **PLSR** was the strongest regression model across all three datasets (avg. CV RMSE: 0.5555). The `Concussion` dataset hit an RMSE of **0.3498**, meeting the pre-defined threshold. PLSR outperformed PCR by better extracting signal from weak features — consistent with its known advantage when targets correlate with low-variance directions in the data.
-- **Decision Tree & Random Forest on `Concussion`** produced strong classification results: **90.6% CV accuracy** (decision tree) and **84.0%** (random forest), both well above the 70% threshold. Top predictive features were Team (0.27 importance), Season (0.24), and Average Playtime Before Injury (0.13).
 
-### Where Models Fell Short
-- `Video_Review` and `InjuryRecord` consistently underperformed across all model types (~42–65% accuracy, RMSE up to 1.41). The primary driver was dataset size — 37 and 105 records respectively are insufficient for stable modeling.
-- Clustering silhouette scores were low across all three datasets (range: 0.14–0.49), indicating overlapping rather than well-separated groupings.
-- Label encoding (instead of one-hot encoding) on tree models for `Video_Review` and `InjuryRecord` introduced noise — identified as a methodological limitation.
+| Dataset | Machine Learning Model | CV accuracy |
+|---|---|---|
+| `Video_Review` | Logistic Regression | 0.5946 |
+| `Video_Review` | Support Vector Machine (with best C) | 0.7586 |
+| `Video_Review` | Decision Tree Regression | 0.4293 |
+| `Video_Review` | Random Forest Regression | 0.4547 |
+| `Video_Review` | KNN | 0.6250 |
+| `Video_Review` | Gradient Boosting | 0.5533 |
+| `Injury_Record` | Logistic Regression | 0.5048 |
+| `Injury_Record` | Support Vector Machine (with best C) | 0.5357 |
+| `Injury_Record` | Decision Tree Regression | 0.4240 |
+| `Injury_Record` | Random Forest Regression | 0.4026 |
+| `Injury_Record` | KNN | 0.4770 |
+| `Injury_Record` | Gradient Boosting | 0.5346 |
+| `Concussion` | Logistic Regression | 0.8031|
+| `Concussion` | Support Vector Machine (with best C) | 0.9500 |
+| `Concussion` | Decision Tree Regression| 0.9062 |
+| `Concussion` | Random Forest Regression | 0.8400 |
+| `Concussion` | KNN | 0.8460 |
+| `Concussion` | Gradient Boosting | 0.8885 |
 
----
+
+| Dataset | Machine Learning Model | Silhouette Scores |
+|---|---|---|
+| `Video_Review` | K-means | 0.2362 |
+| `Video_Review` | DBSCAN | 0.17 |
+| `Video_Review` | HAC | 0.21 |
+| `Injury_Record` | K-means | 0.3616 |
+| `Injury_Record` | DBSCAN | 0.38 |
+| `Injury_Record` | HAC | 0.37 |
+| `Concussion` | K-means | 0.1436 |
+| `Concussion` | DBSCAN | 0.49 |
+| `Concussion` | HAC | 0.46 |
+
+**What Worked**
+- **PLSR** was the strongest regression model across all three datasets (avg. CV RMSE: 0.5555).
+-  The `Concussion` dataset produced an RMSE of **0.3498**, meeting the success criteria threshold.
+- PLSR slightly outperformed **PCR** (avg. CV RMSE 0.5899 across all three datasets) due to its ability to find the best predictor in weak features
+
+- **Decision Tree & Random Forest** performed well with the `Concussion' dataset, producing a **90.6% CV accuracy** (decision tree) and **84.0%** (random forest), both well above the 70% success criteria threshold.
+- Top predictive features in predicting concussions in these datasets were “Team”, “Season”, and “Average Playtime Before Injury” which had an importance level of about 0.27, 0.24, and 0.13 respectively.
+  
+
+**What Did Not Work**
+- All three datasets are small making them prone to overfit, especially 'Video_Review' and 'InjuryRecord'.
+   -Model accuacy for 'Video_Review' and 'InjuryRecord' ranged from 40.26%-75.86% with a CV RMSE reaching up to 2.636
+
+-'Video_Review' and 'InjuryRecord' datasets did not perform well in Classification models.
+   -'Video_Review': **Decision Tree**= 42.93% cv accuracy with a standard deviation of 16.7%; **Random Forest**= 45.47% cv accuracy with a standard deviation of 17%
+  - 'InjuryRecord': **Decision Tree**= 42.40% cv accuracy with a standard deviation of 8.94%; **Random Forest**= 40.26% cv accuracy with a standard deviation of 9.18%
+  - Both datasets were label-encoded when training these models which introduced noise that negatively effected the accuracy of the models
+
+- Clustering silhouette scores were low across all three datasets (range: 0.14–0.49), indicating distinct groups does not satisfy the model.
+
+
+
+
+
 
 ## Key Findings
 
