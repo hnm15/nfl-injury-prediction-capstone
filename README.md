@@ -27,7 +27,7 @@ All three datasets used in this project were accessed online through public down
 **Modeling/Analysis**
 - Classification
 - Regression
--     test
+-    test
 - Clustering  
 - **PLSR & PCR** — selected to handle multicollinearity via dimensionality reduction
 - **Decision Tree & Random Forest** — selected for non-linear pattern detection and strong handling of categorical targets
