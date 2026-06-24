@@ -27,6 +27,8 @@ All three datasets used in this project were accessed online through public down
 
 
 ### Modeling/Analysis 
+-A total of 18 different machine learning models were evaluated in this project.
+
 - Classification
    - **Decision Tree & Random Forest** selected for insight into non-linear patterns and strong handling of categorical targets, the data type of all three targets.
      
@@ -52,6 +54,36 @@ All three datasets used in this project were accessed online through public down
 
 
 ### Results
+
+| Dataset | Machine Learning Model | CV RMSE |
+|---|---|---|
+| `Video_Review` | Polynomial Terms | 2.595 |
+| `Injury_Record` | Polynomial Terms | 1.256 |
+| `Concussion` | Polynomial Terms | 0.384|
+| `Video_Review` | Interaction Terms | 2.636 |
+| `Injury_Record` | Interaction Terms | 0.712 |
+| `Concussion` | Interaction Terms | 0.403 |
+| `Video_Review` | Lasso Regression | 1.07 |
+| `Injury_Record` | Lasso Regression | 0.51 |
+| `Concussion` | Lasso Regression | 0.40 |
+| `Video_Review` | Ridge Regression | 1.25 |
+| `Injury_Record` | Ridge Regression | 0.54 |
+| `Concussion` | Ridge Regression | 0.37 |
+| `Video_Review` | Elastic Net Regression | 1.07 |
+| `Injury_Record` | Elastic Net Regression | 0.51 |
+| `Concussion` | Elastic Net Regression | 0.36 |
+| `Video_Review` | Forward Selection | 1.2076 |
+| `Injury_Record` | Forward Selection  | 0.5076 |
+| `Concussion` | Forward Selection  | 0.3721 |
+| `Video_Review` | Backward Selection | 1.2076 |
+| `Injury_Record` | Backward Selection  | 0.5208 |
+| `Concussion` | Backward Selection  | 0.3708 |
+| `Video_Review` | PCR | 0.9214 |
+| `Injury_Record` | PCR | 0.4972 |
+| `Concussion` | PCR | 0.3513 |
+| `Video_Review` | PLSR | 0.8241 |
+| `Injury_Record` | PLSR | 0.4926 |
+| `Concussion` | PLSR | 0.3498 |
 
 ### What Worked
 - **PLSR** was the strongest regression model across all three datasets (avg. CV RMSE: 0.5555). The `Concussion` dataset hit an RMSE of **0.3498**, meeting the pre-defined threshold. PLSR outperformed PCR by better extracting signal from weak features — consistent with its known advantage when targets correlate with low-variance directions in the data.
@@ -131,8 +163,10 @@ All three datasets used in this project were accessed online through public down
 Abdi, H. (2010). Partial least squares regression and projection on latent structure       
    regression (PLS Regression). WIREs Computational Statistics, 2(1), 97-106.          
    https://doi.org/10.1002/wics.51   
+
 Grashow R., Shaffer-Pancyzk TV., Dairi I., Lee, H., Marengi, D., Baker, J., Weisskop, M. G., 
-   Speizer, F. E., Whittington, A. J., Taylor, H. A., Keating, D., Tenforde, D., Guseh, J. S.,    Wasfy, M. M., Zafonte, R., Baggish, A. (2023). Healthspan and chronic disease burden among    young adult and middle-aged male former American-style professional football players.          British Journal of Sports Medicine, 57(3), 166-171. 
+   Speizer, F. E., Whittington, A. J., Taylor, H. A., Keating, D., Tenforde, D., Guseh, J. S.,    Wasfy, M. M., Zafonte, R., Baggish, A. (2023). 
+Healthspan and chronic disease burden among    young adult and middle-aged male former American-style professional football players.          British Journal of Sports Medicine, 57(3), 166-171. 
 Kaggle. (2021). Concussions in the NFL (2012-2014). Kaggle. 
    https://www.kaggle.com/datasets/rishidamarla/concussions-in-the-nfl-20122014/data 
 Kaggle. (2019). NFL 1st and Future. Kaggle. 
@@ -144,7 +178,7 @@ Logistic Regression and regularization: Avoiding overfitting and improving gener
    https://medium.com/@rithpansanga/logistic-regression-and-regularization-avoiding
    overfitting-   and-improving-generalization-e9afdcddd09d 
 NFL Football Operations. (2025). Concussions Decrease to Historic Low in 2024 NFL Season. 
-   National Football League. https://operations.nfl.com/updates/football-ops/concussions-         decrease-to-historic-low-in-2024-nfl-season/ 
+   National Football League. https://operations.nfl.com/updates/football-ops/concussions-decrease-to-historic-low-in-2024-nfl-season/ 
 O’Malley, K (2025, February 7). There’s a way to deal with brain injuries in football. It      
    isn’t 
    safety gear. Harvard Public Health. https://harvardpublichealth.org/policy-practice/the-       nfls-concussion-solutions-are-an-illusion/ 
