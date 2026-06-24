@@ -1,38 +1,34 @@
 # Injury Prediction and Player Safety in the NFL
+
+**Overview** 
 This capstone project was completed as part of my Master’s Degree in Data Science at Boston University (August 2024 – December 2025). Using publicly available National Football League (NFL) data, the project applies data analysis and predictive modeling to examine factors that influence player health and safety. The analysis identifies patterns in common injuries and investigates aspects of gameplay that may increase a player’s risk of injury, with a particular focus on concussions and lower-body injuries. The findings of this project were in turn used to make recommendations to the NFL that involved rule changes and new coaching techniques.
 
-My undergraduate and graduate degrees in Exercise Science provided me with domain knowledge that helped me prioritize meaningful relationships and interpret and contextualize findings.
+**The Problem**
+The NFL is known as one of the most dangerous sports when it comes to player health and safety, while playing the sport and after the conclusion of one’s career. According to a research study published in 2023, it was discovered that American football players, particularly linemen, were found to be prone to early ageing “characterised by premature burden of chronic disease and reduced healthspan” (Grashow et al., 2023). The NFL has worked to address these issues by introducing rule changes, guardian caps to prevent concussions, redesigning equipment, and procedural changes like the introduction of the dynamic kickoff. These changes have produced success, as the NFL stated in the 2024 season they saw “concussions decreased 17% compared to last season and 12% compared to the 2021-2023 season” (National Football League [NFL], 2025). Although improvements have been made, independent research has shown that the data might not be as strong as the NFL originally reported. For example, Katherine O’Malley in her article “There’s a way to deal with brain injuries in football. It isn’t safety gear”, it was reported that when two lab-based studies and one on-field study replicated the use of guardian caps the results showed no difference in players who wore them versus those who did not wear them. As a result, the threat to player safety remains prevalent in all facets of the game. 
 
-******## The Problem
-
-The NFL is one of the most physically dangerous professional sports leagues in the world. Research has linked play to early chronic disease and reduced life expectancy, particularly among linemen. While the league has introduced interventions in recent years — guardian caps, the dynamic kickoff, updated contact penalties — independent studies suggest their effectiveness may be overstated. This project applies machine learning and statistical modeling to independently quantify injury risk factors and identify where targeted interventions could have the greatest impact.
-
----
-
-## Data
-
-Three publicly available NFL datasets were sourced from Kaggle:
+**Datasets**
+All three datasets used in this project were accessed online through public downloadable files posted on Kaggle.
 
 | Dataset | Description | Size |
 |---|---|---|
-| `Video_Review` | Concussions on punt plays during the 2016–2017 NFL season; target: primary impact type (helmet-to-helmet, helmet-to-body, helmet-to-ground) | 37 records |
-| `InjuryRecord` | Lower-limb injuries across two regular seasons; includes playing surface and days missed; target: surface type (synthetic vs. natural) | 105 records |
-| `Concussion` | Concussion injuries from 2012–2014 NFL seasons; includes position, week of injury, games missed, average playtime before injury; target: reported injury type | 390 records |
+| `Video_Review` | Collection of information that was created based on reviewable video evidence that outlines the events that resulted in a concussion during punt players in the NFL 2016-2017 season. | 37 entries |
+| `InjuryRecord` | Accounts for lower-limbs injuries that occurred over two NFL regular seasons. Provides information on the surface the game occurred on and the number of days the player missed due to injury.| 105 enteries |
+| `Concussion` | Contains a list of concussion injuries that occurred in the NFL from the years 2012 to 2014. | 390 enteries |
 
-> Raw data is not redistributed in this repo. See `data/README.md` for sources and access instructions.
+**Methods**
+### Data Cleaning, Preprocessing, Exploratory Data Analysis (EDA)
+- Preprocessing determined no duplicate rows or columns in any of the three datasets
+- Missing values or "NaN" values were dropped in all three datasets
+- Standarization, using 'StandardScaler' was applied to all numerical features
+- One-Hot Encoding was applied to all categorical variables
+- Univariate analysis (histograms, distribution plots) and bivariate analysis (heat maps, scatter plots, pair plots, and line graphs) performed on each dataset
 
----
 
-## Methods
-
-### Preprocessing & EDA
-- Null value removal, deduplication, and feature validation across all three datasets
-- `StandardScaler` applied to all numerical features to eliminate scale bias
-- One-Hot Encoding applied to categorical variables (position, impact type, surface)
-- Univariate analysis (histograms, distribution plots) and bivariate analysis (correlation heatmaps, scatter plots, pair plots, line graphs)
-- Multicollinearity identified in `InjuryRecord` and `Concussion` datasets — informed model selection
-
-### Models Used
+**Modeling/Analysis**
+- Classification
+- Regression
+-     test
+- Clustering  
 - **PLSR & PCR** — selected to handle multicollinearity via dimensionality reduction
 - **Decision Tree & Random Forest** — selected for non-linear pattern detection and strong handling of categorical targets
 - **DBSCAN & Hierarchical Agglomerative Clustering (HAC)** — used to identify latent risk groupings across players and play types
@@ -130,3 +126,29 @@ Three publicly available NFL datasets were sourced from Kaggle:
    ```bash
    jupyter notebook notebooks/modeling_notebook.ipynb
    ```
+
+**References**
+Abdi, H. (2010). Partial least squares regression and projection on latent structure       
+   regression (PLS Regression). WIREs Computational Statistics, 2(1), 97-106.          
+   https://doi.org/10.1002/wics.51   
+Grashow R., Shaffer-Pancyzk TV., Dairi I., Lee, H., Marengi, D., Baker, J., Weisskop, M. G., 
+   Speizer, F. E., Whittington, A. J., Taylor, H. A., Keating, D., Tenforde, D., Guseh, J. S.,    Wasfy, M. M., Zafonte, R., Baggish, A. (2023). Healthspan and chronic disease burden among    young adult and middle-aged male former American-style professional football players.          British Journal of Sports Medicine, 57(3), 166-171. 
+Kaggle. (2021). Concussions in the NFL (2012-2014). Kaggle. 
+   https://www.kaggle.com/datasets/rishidamarla/concussions-in-the-nfl-20122014/data 
+Kaggle. (2019). NFL 1st and Future. Kaggle. 
+   https://www.kaggle.com/competitions/nfl-playing-surface-analytics/data
+Kaggle. (2019). NFL punt analytics competition dataset. Kaggle. 
+   https://www.kaggle.com/competitions/NFL-Punt-Analytics-Competition/overview
+Logistic Regression and regularization: Avoiding overfitting and improving generalization. 
+   (2023, January 5). Medium. Retrieved June 29, 2025.            
+   https://medium.com/@rithpansanga/logistic-regression-and-regularization-avoiding
+   overfitting-   and-improving-generalization-e9afdcddd09d 
+NFL Football Operations. (2025). Concussions Decrease to Historic Low in 2024 NFL Season. 
+   National Football League. https://operations.nfl.com/updates/football-ops/concussions-         decrease-to-historic-low-in-2024-nfl-season/ 
+O’Malley, K (2025, February 7). There’s a way to deal with brain injuries in football. It      
+   isn’t 
+   safety gear. Harvard Public Health. https://harvardpublichealth.org/policy-practice/the-       nfls-concussion-solutions-are-an-illusion/ 
+Scikit-learn. (n.d.). Principal Component Regression vs Partial Least Squares Regression. 
+   https://scikit-learn.org/stable/auto_examples/cross_decomposition/plot_pcr_vs_pls.html 
+The Pennsylvania State University (n.d.). Combining Clusters in the Agglomerative Approach 
+   [Lecture Notes]. https://online.stat.psu.edu/stat505/lesson/14/14.4 
