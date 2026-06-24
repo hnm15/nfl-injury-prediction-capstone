@@ -55,70 +55,23 @@ All three datasets used in this project were accessed online through public down
 
 ### Results
 
-| Dataset | Machine Learning Model | CV RMSE |
+| Dataset | Best Machine Learning Model | CV RMSE |
 |---|---|---|
-| `Video_Review` | Polynomial Terms | 2.595 |
-| `Video_Review` | Interaction Terms | 2.636 |
-| `Video_Review` | Lasso Regression | 1.07 |
-| `Video_Review` | Ridge Regression | 1.25 |
-| `Video_Review` | Elastic Net Regression | 1.07 |
-| `Video_Review` | Forward Selection | 1.2076 |
-| `Video_Review` | Backward Selection | 1.2076 |
-| `Video_Review` | PCR | 0.9214 |
 | `Video_Review` | PLSR | 0.8241 |
-| `Injury_Record` | Polynomial Terms | 1.256 |
-| `Injury_Record` | Interaction Terms | 0.712 |
-| `Injury_Record` | Lasso Regression | 0.51 |
-| `Injury_Record` | Ridge Regression | 0.54 |
-| `Injury_Record` | Elastic Net Regression | 0.51 |
-| `Injury_Record` | Forward Selection  | 0.5076 |
-| `Injury_Record` | Backward Selection  | 0.5208 |
-| `Injury_Record` | PCR | 0.4972 |
 | `Injury_Record` | PLSR | 0.4926 |
-| `Concussion` | Polynomial Terms | 0.384|
-| `Concussion` | Interaction Terms | 0.403 |
-| `Concussion` | Lasso Regression | 0.40 |
-| `Concussion` | Ridge Regression | 0.37 |
-| `Concussion` | Elastic Net Regression | 0.36 |
-| `Concussion` | Forward Selection  | 0.3721 |
-| `Concussion` | Backward Selection  | 0.3708 |
-| `Concussion` | PCR | 0.3513 |
 | `Concussion` | PLSR | 0.3498 |
 
-
-| Dataset | Machine Learning Model | CV accuracy |
+| Dataset | Best Machine Learning Model | CV accuracy |
 |---|---|---|
-| `Video_Review` | Logistic Regression | 0.5946 |
 | `Video_Review` | Support Vector Machine (with best C) | 0.7586 |
-| `Video_Review` | Decision Tree Regression | 0.4293 |
-| `Video_Review` | Random Forest Regression | 0.4547 |
-| `Video_Review` | KNN | 0.6250 |
-| `Video_Review` | Gradient Boosting | 0.5533 |
-| `Injury_Record` | Logistic Regression | 0.5048 |
 | `Injury_Record` | Support Vector Machine (with best C) | 0.5357 |
-| `Injury_Record` | Decision Tree Regression | 0.4240 |
-| `Injury_Record` | Random Forest Regression | 0.4026 |
-| `Injury_Record` | KNN | 0.4770 |
-| `Injury_Record` | Gradient Boosting | 0.5346 |
-| `Concussion` | Logistic Regression | 0.8031|
 | `Concussion` | Support Vector Machine (with best C) | 0.9500 |
-| `Concussion` | Decision Tree Regression| 0.9062 |
-| `Concussion` | Random Forest Regression | 0.8400 |
-| `Concussion` | KNN | 0.8460 |
-| `Concussion` | Gradient Boosting | 0.8885 |
-
 
 | Dataset | Machine Learning Model | Silhouette Scores |
 |---|---|---|
 | `Video_Review` | K-means | 0.2362 |
-| `Video_Review` | DBSCAN | 0.17 |
-| `Video_Review` | HAC | 0.21 |
-| `Injury_Record` | K-means | 0.3616 |
 | `Injury_Record` | DBSCAN | 0.38 |
-| `Injury_Record` | HAC | 0.37 |
-| `Concussion` | K-means | 0.1436 |
 | `Concussion` | DBSCAN | 0.49 |
-| `Concussion` | HAC | 0.46 |
 
 **What Worked**
 - **PLSR** was the strongest regression model across all three datasets (avg. CV RMSE: 0.5555).
