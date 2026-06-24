@@ -3,6 +3,7 @@
 **Overview** 
 This capstone project was completed as part of my Master’s Degree in Data Science at Boston University (August 2024 – December 2025). Using publicly available National Football League (NFL) data, the project applies data analysis and predictive modeling to examine factors that influence player health and safety. The analysis identifies patterns in common injuries and investigates aspects of gameplay that may increase a player’s risk of injury, with a particular focus on concussions and lower-body injuries. The findings of this project were in turn used to make recommendations to the NFL that involved rule changes and new coaching techniques.
 
+
 **The Problem**
 The NFL is known as one of the most dangerous sports when it comes to player health and safety, while playing the sport and after the conclusion of one’s career. According to a research study published in 2023, it was discovered that American football players, particularly linemen, were found to be prone to early ageing “characterised by premature burden of chronic disease and reduced healthspan” (Grashow et al., 2023). The NFL has worked to address these issues by introducing rule changes, guardian caps to prevent concussions, redesigning equipment, and procedural changes like the introduction of the dynamic kickoff. These changes have produced success, as the NFL stated in the 2024 season they saw “concussions decreased 17% compared to last season and 12% compared to the 2021-2023 season” (National Football League [NFL], 2025). Although improvements have been made, independent research has shown that the data might not be as strong as the NFL originally reported. For example, Katherine O’Malley in her article “There’s a way to deal with brain injuries in football. It isn’t safety gear”, it was reported that when two lab-based studies and one on-field study replicated the use of guardian caps the results showed no difference in players who wore them versus those who did not wear them. As a result, the threat to player safety remains prevalent in all facets of the game. 
 
@@ -15,6 +16,7 @@ All three datasets used in this project were accessed online through public down
 | `InjuryRecord` | Accounts for lower-limbs injuries that occurred over two NFL regular seasons. Provides information on the surface the game occurred on and the number of days the player missed due to injury.| 105 enteries |
 | `Concussion` | Contains a list of concussion injuries that occurred in the NFL from the years 2012 to 2014. | 390 enteries |
 
+
 **Methods**
 ### Data Cleaning, Preprocessing, Exploratory Data Analysis (EDA)
 - Preprocessing determined no duplicate rows or columns in any of the three datasets
@@ -26,32 +28,30 @@ All three datasets used in this project were accessed online through public down
 
 **Modeling/Analysis**
 - Classification
+   - **Decision Tree & Random Forest** selected for insight into non-linear patterns and strong handling of categorical targets, the data type of all three targets.
+     
 - Regression
--    test
+   - **PLSR & PCR** selected to handle multicollinearity shown in two of the datasets during EDA.
+
 - Clustering  
-- **PLSR & PCR** — selected to handle multicollinearity via dimensionality reduction
-- **Decision Tree & Random Forest** — selected for non-linear pattern detection and strong handling of categorical targets
-- **DBSCAN & Hierarchical Agglomerative Clustering (HAC)** — used to identify latent risk groupings across players and play types
+   - **DBSCAN & Hierarchical Agglomerative Clustering (HAC)** used to identify if there were any common risk factors or features that may put a player at a higher risk for injury.
 
 ### Validation Strategy
 - 80/20 train-test split on all datasets
-- 5-fold cross-validation on all supervised models to reduce overfitting risk on small datasets
-- Hyperparameter tuning on all models (`max_depth`, `min_samples_leaf`, `min_samples_split` for trees; `n_components` for PLSR/PCR; `eps` and `min_samples` via k-distance plots for DBSCAN)
-- Class imbalance in `Video_Review` addressed with `class_weight='balanced'`
+- 5-fold cross-validation on all supervised models to reduce overfitting risk on small datasets. 
+- Hyperparameter tuning applied to all models (**PLSR/PCR**: 'n_components'; **Decision Trees/Random Forests**:‘max_depth’, ‘min_samples_leaf’, and ‘min_samples_split'; **DBSCAN**:`eps` and `min_samples` selected via k-distance plots)
+- Class imbalance in `Video_Review` combatted with `class_weight='balanced'`
 
-### Success Criteria (Pre-Defined)
+### Success Criteria
 
-| Metric | Threshold |
-|---|---|
-| RMSE | < 0.40 |
-| R² | > 0.70 |
-| Accuracy | > 70% |
-| F1-Score | > 0.70 |
-| Pearson r | > 0.70 |
+- RMSE < 0.40
+- R² (Coefficient of Determination) > 0.70
+- Accuracy > 70%
+- F1-scores > 0.70
+- Pearson correlation coefficient > 0.70
 
----
 
-## Results
+**Results**
 
 ### What Worked
 - **PLSR** was the strongest regression model across all three datasets (avg. CV RMSE: 0.5555). The `Concussion` dataset hit an RMSE of **0.3498**, meeting the pre-defined threshold. PLSR outperformed PCR by better extracting signal from weak features — consistent with its known advantage when targets correlate with low-variance directions in the data.
