@@ -58,31 +58,31 @@ All three datasets used in this project were accessed online through public down
 | Dataset | Machine Learning Model | CV RMSE |
 |---|---|---|
 | `Video_Review` | Polynomial Terms | 2.595 |
-| `Injury_Record` | Polynomial Terms | 1.256 |
-| `Concussion` | Polynomial Terms | 0.384|
 | `Video_Review` | Interaction Terms | 2.636 |
-| `Injury_Record` | Interaction Terms | 0.712 |
-| `Concussion` | Interaction Terms | 0.403 |
 | `Video_Review` | Lasso Regression | 1.07 |
-| `Injury_Record` | Lasso Regression | 0.51 |
-| `Concussion` | Lasso Regression | 0.40 |
 | `Video_Review` | Ridge Regression | 1.25 |
-| `Injury_Record` | Ridge Regression | 0.54 |
-| `Concussion` | Ridge Regression | 0.37 |
 | `Video_Review` | Elastic Net Regression | 1.07 |
-| `Injury_Record` | Elastic Net Regression | 0.51 |
-| `Concussion` | Elastic Net Regression | 0.36 |
 | `Video_Review` | Forward Selection | 1.2076 |
-| `Injury_Record` | Forward Selection  | 0.5076 |
-| `Concussion` | Forward Selection  | 0.3721 |
 | `Video_Review` | Backward Selection | 1.2076 |
-| `Injury_Record` | Backward Selection  | 0.5208 |
-| `Concussion` | Backward Selection  | 0.3708 |
 | `Video_Review` | PCR | 0.9214 |
-| `Injury_Record` | PCR | 0.4972 |
-| `Concussion` | PCR | 0.3513 |
 | `Video_Review` | PLSR | 0.8241 |
+| `Injury_Record` | Polynomial Terms | 1.256 |
+| `Injury_Record` | Interaction Terms | 0.712 |
+| `Injury_Record` | Lasso Regression | 0.51 |
+| `Injury_Record` | Ridge Regression | 0.54 |
+| `Injury_Record` | Elastic Net Regression | 0.51 |
+| `Injury_Record` | Forward Selection  | 0.5076 |
+| `Injury_Record` | Backward Selection  | 0.5208 |
+| `Injury_Record` | PCR | 0.4972 |
 | `Injury_Record` | PLSR | 0.4926 |
+| `Concussion` | Polynomial Terms | 0.384|
+| `Concussion` | Interaction Terms | 0.403 |
+| `Concussion` | Lasso Regression | 0.40 |
+| `Concussion` | Ridge Regression | 0.37 |
+| `Concussion` | Elastic Net Regression | 0.36 |
+| `Concussion` | Forward Selection  | 0.3721 |
+| `Concussion` | Backward Selection  | 0.3708 |
+| `Concussion` | PCR | 0.3513 |
 | `Concussion` | PLSR | 0.3498 |
 
 ### What Worked
