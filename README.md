@@ -86,7 +86,7 @@ All three datasets used in this project were accessed online through public down
 - All three datasets are small making them prone to overfit, especially 'Video_Review' and 'InjuryRecord'.
    -Model accuacy for 'Video_Review' and 'InjuryRecord' ranged from 40.26%-75.86% with a CV RMSE reaching up to 2.636
 
--'Video_Review' and 'InjuryRecord' datasets did not perform well in Classification models.
+- 'Video_Review' and 'InjuryRecord' datasets did not perform well in Classification models.
    -'Video_Review': **Decision Tree**= 42.93% cv accuracy with a standard deviation of 16.7%; **Random Forest**= 45.47% cv accuracy with a standard deviation of 17%
   - 'InjuryRecord': **Decision Tree**= 42.40% cv accuracy with a standard deviation of 8.94%; **Random Forest**= 40.26% cv accuracy with a standard deviation of 9.18%
   - Both datasets were label-encoded when training these models which introduced noise that negatively effected the accuracy of the models
@@ -94,11 +94,12 @@ All three datasets used in this project were accessed online through public down
 - Clustering silhouette scores were low across all three datasets (range: 0.14–0.49), indicating distinct groups does not satisfy the model.
 
 
-
-STOPPED HERE
-
-
 ## Key Findings
+- **
+the indication is that features like friendly fire, player activity, and turnover related injuries have limited predictive value regarding primary impact type.
+his indicated that features like body parts injured, and length of time missed due to injury did not have a strong relationship with the surface the injury occurred on. As discussions regarding the dangers of synthetic turf continue in the NFL, this analysis disapproved the need to invest in natural grass and can save the league time and money on changing the field if there is no real prevention measure being achieved. Again, more data on the impact and severity of player’s injuries needs to be collected for a definite recommendation to be made.
+‘Reported Injury Type’ has a clear relationship with features like number of snaps into the game when concussion occurs, a player’s position, and the average playtime before injury
+. Based on these insights, implementing protective equipment for head injuries, specifically for cornerbacks, wide receivers, and safeties who experienced the most injuries in the 2012-2014 NFL seasons is vital. 
 
 - **Average playtime and snap count before injury** are among the strongest predictors of concussion risk — more time on the field directly increases exposure
 - **Team identity and season** were the top predictive features in the `Concussion` dataset, suggesting differences in team training, coaching schemes, or the influence of rule changes over time
