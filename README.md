@@ -1,7 +1,7 @@
 # Injury Prediction and Player Safety in the NFL
 
 ### Overview
-This capstone project was completed as part of my Master’s Degree in Data Science at Boston University (August 2024 – December 2025). Using publicly available National Football League (NFL) data, the project applies data analysis and predictive modeling to examine factors that influence player health and safety. The analysis identifies patterns in common injuries and investigates aspects of gameplay that may increase a player’s risk of injury, with a particular focus on concussions and lower-body injuries. The findings of this project were in turn used to make recommendations to the NFL that involved rule changes and new coaching techniques.
+This capstone project was completed as part of my Master’s Degree in Data Science at Boston University (August 2024 – December 2025). Using publicly available National Football League (NFL) data, the project applies data analysis and predictive modeling to examine factors that are associated with player health and safety. The analysis identifies patterns in common injuries and investigates aspects of gameplay that may increase a player’s risk of injury, with a particular focus on concussions and lower-body injuries. The findings of this project were in turn used to make recommendations to the NFL that involved rule changes and new coaching techniques.
 
 
 ### The Problem
@@ -12,16 +12,16 @@ All three datasets used in this project were accessed online through public down
 
 | Dataset | Description | Size |
 |---|---|---|
-| `Video_Review` | Collection of information that was created based on reviewable video evidence that outlines the events that resulted in a concussion during punt players in the NFL 2016-2017 season. Target:'Primary_Impact_Type'| 37 entries |
-| `InjuryRecord` | Accounts for lower-limbs injuries that occurred over two NFL regular seasons. Provides information on the surface the game occurred on and the number of days the player missed due to injury. Target: 'Surface'| 105 enteries |
-| `Concussion` | Contains a list of concussion injuries that occurred in the NFL from the years 2012 to 2014. Target: 'Reported_Injury_Type'| 390 enteries |
+| `Video_Review` | Collection of information that was created based on reviewable video evidence that outlines the events that resulted in a concussion during punt plays in the NFL 2016-2017 season. Target:'Primary_Impact_Type'| 37 entries |
+| `InjuryRecord` | Accounts for lower-limbs injuries that occurred over two NFL regular seasons. Provides information on the surface the game occurred on and the number of days the player missed due to injury. Target: 'Surface'| 105 entries |
+| `Concussion` | Contains a list of concussion injuries that occurred in the NFL from the years 2012 to 2014. Target: 'Reported_Injury_Type'| 390 entries |
 
 
 ### Methods
 **Data Cleaning, Preprocessing, Exploratory Data Analysis (EDA)**
 - Preprocessing determined no duplicate rows or columns in any of the three datasets
 - Missing values or "NaN" values were dropped in all three datasets
-- Standarization, using 'StandardScaler' was applied to all numerical features
+- Standardization, using 'StandardScaler', was applied to all numerical features
 - One-Hot Encoding was applied to all categorical variables
 - Univariate analysis (histograms, distribution plots) and bivariate analysis (heat maps, scatter plots, pair plots, and line graphs) performed on each dataset
 
@@ -41,7 +41,7 @@ A total of 18 different machine learning models were evaluated in this project.
 **Validation Strategy**
 - 80/20 train-test split on all datasets
 - 5-fold cross-validation on all supervised models to reduce overfitting risk on small datasets. 
-- Hyperparameter tuning applied to all models (**PLSR/PCR**: 'n_components'; **Decision Trees/Random Forests**:‘max_depth’, ‘min_samples_leaf’, and ‘min_samples_split'; **DBSCAN**:`eps` and `min_samples` selected via k-distance plots)
+- Hyperparameter tuning was applied to all models (**PLSR/PCR**: 'n_components'; **Decision Trees/Random Forests**:‘max_depth’, ‘min_samples_leaf’, and ‘min_samples_split'; **DBSCAN**:`eps` and `min_samples` selected via k-distance plots)
 - Class imbalance in `Video_Review` combatted with `class_weight='balanced'`
 
 **Success Criteria**
@@ -83,12 +83,12 @@ A total of 18 different machine learning models were evaluated in this project.
 
 **What Did Not Work**
 - All three datasets are small making them prone to overfit, especially 'Video_Review' and 'InjuryRecord'.
-   -Model accuacy for 'Video_Review' and 'InjuryRecord' ranged from 40.26%-75.86% with a CV RMSE reaching up to 2.636
+   -Model accuracy for 'Video_Review' and 'InjuryRecord' ranged from 40.26%-75.86% with a CV RMSE reaching up to 2.636
 
 - 'Video_Review' and 'InjuryRecord' datasets did not perform well in Classification models.
    -'Video_Review': **Decision Tree**= 42.93% cv accuracy with a standard deviation of 16.7%; **Random Forest**= 45.47% cv accuracy with a standard deviation of 17%
   - 'InjuryRecord': **Decision Tree**= 42.40% cv accuracy with a standard deviation of 8.94%; **Random Forest**= 40.26% cv accuracy with a standard deviation of 9.18%
-  - Both datasets were label-encoded when training these models which introduced noise that negatively effected the accuracy of the models
+  - Both datasets were label-encoded when training these models which introduced noise that negatively affected the accuracy of the models
 
 - Clustering silhouette scores were low across all three datasets (range: 0.14–0.49), indicating distinct groups does not satisfy the model.
 
@@ -96,14 +96,14 @@ A total of 18 different machine learning models were evaluated in this project.
 ### Key Findings
 - ‘Reported Injury Type’ had a strong relationship with features like **number of snaps into the game when concussion occurs and the average playtime before injury**. The longer a player is on the field, the higher their risk for a concussion.
 - **A player's position** was strongly correlated with number of concussions. Cornerbacks, wide receivers, and safeties experienced the highest rate of concussions in the 2012-2014 NFL seasons.
-- During NFL punt plays, **helmet-to-body** was the most frequent the cause of a concussion in 2016 and **helmet-to-helmet** in 2017.
+- During NFL punt plays, **helmet-to-body** was the most frequent cause of a concussion in 2016 and **helmet-to-helmet** in 2017.
 - During NFL punt plays, **Friendly Fire** was moderately correlated with an increased risk of a concussion.
 - **Playing surface** (synthetic vs. natural) did not demonstrate a strong relationship with lower-limb injuries or injury severity.
 - **Team identity and NFL season** were the most influential predictive features in the 'Concussion' dataset.
 
 
 ### Recommendations
-- The higher the total snaps a player faced, the higher their risk is for a concussion. Establish player and position specific snap limits and consider shortening the NFL season or length of games to minimize number of repetitive contact.
+- The higher the total snaps a player faced, the higher their risk is for a concussion. Establish player and position-specific snap limits and consider shortening the NFL season or length of games to minimize the number of repetitive contacts.
 - Increase protections for cornerbacks, wide receivers, and safeties.
 - Explore personnel changes, such as moving to 10 players instead of 11 on punts, to reduce the rate of concussions.
 - Explore new tackling techniques to reduce helmet-to-body and helmet-to-helmet contact.
@@ -113,15 +113,15 @@ A total of 18 different machine learning models were evaluated in this project.
 
 ### Limitations
 - All three datasets were small (range: 37-390 entries). Machine learning models were  prone to overfitting and produced less accurate results.
-- Most recent dataset used was published in 2019. Recent seasons' data, especially since the adaption of the dynamic kickoff, helmet re-design, and new penalties for contact to players head and lower bodies, would provide more accurate insights.
+- Most recent dataset used was published in 2019. Recent seasons' data, especially since the adoption of the dynamic kickoff, helmet re-design, and new penalties for contact to players' heads and lower bodies, would provide more accurate insights.
 
 
 ### Future Work
 - Collect larger and more recent injury datasets to improve model accuracy.
-- Conduct longitudinal study of injury trends in the NFL.
+- Conduct longitudinal studies of injury trends in the NFL.
 - Implement risk assessment models to determine what features result in highest risk of injury.
 - Implement A/B testing of tackling techniques to determine effectiveness.
-- Collect and analyze data regarding the NFL’s return-to-play policy and consequential  risk of developing CTE.
+- Collect and analyze data regarding the NFL’s return-to-play policy and risk of developing CTE.
 
 
 ### How to Run
@@ -146,7 +146,7 @@ A total of 18 different machine learning models were evaluated in this project.
 
 4. Navigate to the `notebooks/` directory and run the notebooks to reproduce the analysis.
 
-*The datasets used in this project are available through Kaggle. Please see the **Datasets** section in this report for download sources.*
+*The datasets used in this project are available through Kaggle. Please see the **Datasets** section in this report for the downloadable sources.*
 
 
 
