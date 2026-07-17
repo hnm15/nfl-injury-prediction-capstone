@@ -45,7 +45,6 @@ A total of 18 different machine learning models were evaluated in this project.
 - Class imbalance in `Video_Review` combatted with `class_weight='balanced'`
 
 **Success Criteria**
-
 - RMSE < 0.40
 - R² (Coefficient of Determination) > 0.70
 - Accuracy > 70%
@@ -95,34 +94,34 @@ A total of 18 different machine learning models were evaluated in this project.
 
 
 ### Key Findings
--‘Reported Injury Type’ had a strong relationship with features like **number of snaps into the game when concussion occurs and the average playtime before injury**. The longer a player is on the field, the higher their risk for a concussion.
--**A player's position** was strongly correlated with number of concussions. Cornerbacks, wide receivers, and safeties experienced the highest rate of concussions in the 2012-2014 NFL seasons.
--During NFL punt plays, **helmet-to-body** was the most frequent the cause of a concussion in 2016 and **helmet-to-helmet** in 2017.
--During NFL punt plays, **Friendly Fire** was moderately correlated with an increased risk of a concussion.
--**Playing surface** (synthetic vs. natural) did not demonstrate a strong relationship with lower-limb injuries or injury severity.  
--**Team identity and NFL season** were the most influential predictive features in the 'Concussion' dataset.
+- ‘Reported Injury Type’ had a strong relationship with features like **number of snaps into the game when concussion occurs and the average playtime before injury**. The longer a player is on the field, the higher their risk for a concussion.
+- **A player's position** was strongly correlated with number of concussions. Cornerbacks, wide receivers, and safeties experienced the highest rate of concussions in the 2012-2014 NFL seasons.
+- During NFL punt plays, **helmet-to-body** was the most frequent the cause of a concussion in 2016 and **helmet-to-helmet** in 2017.
+- During NFL punt plays, **Friendly Fire** was moderately correlated with an increased risk of a concussion.
+- **Playing surface** (synthetic vs. natural) did not demonstrate a strong relationship with lower-limb injuries or injury severity.
+- **Team identity and NFL season** were the most influential predictive features in the 'Concussion' dataset.
 
 
 ### Recommendations
--The higher the total snaps a player faced, the higher their risk is for a concussion. Establish player and position specific snap limits and consider shortening the NFL season or length of games to minimize number of repetitive contact.
--Increase protections for cornerbacks, wide receivers, and safeties.
--Explore personnel changes, such as moving to 10 players instead of 11 on punts, to reduce the rate of concussions.
--Explore new tackling techniques to reduce helmet-to-body and helmet-to-helmet contact.
--Surface type was not a strong indicator of lower-limb injuries. Further examination of the relationship between lower-limb injuries and surface type is needed.
--Consider adapting the game of football to reduce contact, investigating changes similar to the rules established in flag football. 
+- The higher the total snaps a player faced, the higher their risk is for a concussion. Establish player and position specific snap limits and consider shortening the NFL season or length of games to minimize number of repetitive contact.
+- Increase protections for cornerbacks, wide receivers, and safeties.
+- Explore personnel changes, such as moving to 10 players instead of 11 on punts, to reduce the rate of concussions.
+- Explore new tackling techniques to reduce helmet-to-body and helmet-to-helmet contact.
+- Surface type was not a strong indicator of lower-limb injuries. Further examination of the relationship between lower-limb injuries and surface type is needed.
+- Consider adapting the game of football to reduce contact, investigating changes similar to the rules established in flag football. 
 
 
 ### Limitations
--All three datasets were small (range: 37-390 entries). Machine learning models were  prone to overfitting and produced less accurate results.
--Most recent dataset used was published in 2019. Recent seasons' data, especially since the adaption of the dynamic kickoff, helmet re-design, and new penalties for contact to players head and lower bodies, would provide more accurate insights.
+- All three datasets were small (range: 37-390 entries). Machine learning models were  prone to overfitting and produced less accurate results.
+- Most recent dataset used was published in 2019. Recent seasons' data, especially since the adaption of the dynamic kickoff, helmet re-design, and new penalties for contact to players head and lower bodies, would provide more accurate insights.
 
 
 ### Future Work
--Collect larger and more recent injury datasets to improve model accuracy.
--Conduct longitudinal study of injury trends in the NFL.
--Implement risk assessment models to determine what features result in highest risk of injury.
--Implement A/B testing of tackling techniques to determine effectiveness.
--Collect and analyze data regarding the NFL’s return-to-play policy and consequential  risk of developing CTE.
+- Collect larger and more recent injury datasets to improve model accuracy.
+- Conduct longitudinal study of injury trends in the NFL.
+- Implement risk assessment models to determine what features result in highest risk of injury.
+- Implement A/B testing of tackling techniques to determine effectiveness.
+- Collect and analyze data regarding the NFL’s return-to-play policy and consequential  risk of developing CTE.
 
 
 ### How to Run
