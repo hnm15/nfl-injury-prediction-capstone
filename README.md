@@ -27,7 +27,7 @@ All three datasets used in this project were accessed online through public down
 
 
 ### Modeling/Analysis 
--A total of 18 different machine learning models were evaluated in this project.
+A total of 18 different machine learning models were evaluated in this project.
 
 - Classification
    - **Decision Tree & Random Forest** selected for insight into non-linear patterns and strong handling of categorical targets, the data type of all three targets.
@@ -94,75 +94,63 @@ All three datasets used in this project were accessed online through public down
 - Clustering silhouette scores were low across all three datasets (range: 0.14–0.49), indicating distinct groups does not satisfy the model.
 
 
-## Key Findings
-- **
-the indication is that features like friendly fire, player activity, and turnover related injuries have limited predictive value regarding primary impact type.
-his indicated that features like body parts injured, and length of time missed due to injury did not have a strong relationship with the surface the injury occurred on. As discussions regarding the dangers of synthetic turf continue in the NFL, this analysis disapproved the need to invest in natural grass and can save the league time and money on changing the field if there is no real prevention measure being achieved. Again, more data on the impact and severity of player’s injuries needs to be collected for a definite recommendation to be made.
-‘Reported Injury Type’ has a clear relationship with features like number of snaps into the game when concussion occurs, a player’s position, and the average playtime before injury
-. Based on these insights, implementing protective equipment for head injuries, specifically for cornerbacks, wide receivers, and safeties who experienced the most injuries in the 2012-2014 NFL seasons is vital. 
+### Key Findings
+-‘Reported Injury Type’ had a strong relationship with features like **number of snaps into the game when concussion occurs and the average playtime before injury**. The longer a player is on the field, the higher their risk for a concussion.
+-**A player's position** was strongly correlated with number of concussions. Cornerbacks, wide receivers, and safeties experienced the highest rate of concussions in the 2012-2014 NFL seasons.
+-During NFL punt plays, **helmet-to-body** was the most frequent the cause of a concussion in 2016 and **helmet-to-helmet** in 2017.
+-During NFL punt plays, **Friendly Fire** was moderately correlated with an increased risk of a concussion.
+-**Playing surface** (synthetic vs. natural) did not demonstrate a strong relationship with lower-limb injuries or injury severity.  
+-**Team identity and NFL season** were the most influential predictive features in the 'Concussion' dataset.
 
-- **Average playtime and snap count before injury** are among the strongest predictors of concussion risk — more time on the field directly increases exposure
-- **Team identity and season** were the top predictive features in the `Concussion` dataset, suggesting differences in team training, coaching schemes, or the influence of rule changes over time
-- **Tackling and blocking** are the primary mechanisms of concussion on punt plays; helmet-to-body contact led in 2016 while helmet-to-helmet surged in 2017
-- **Friendly fire (same-team contact)** showed a moderate correlation with concussion risk on punt plays — a potentially modifiable risk factor
-- **Playing surface** (synthetic vs. natural) did not show a strong enough relationship with lower-limb injury outcomes to support costly surface replacement investments based on this data alone
-- **Cornerbacks, wide receivers, and safeties** experienced the highest concussion rates in the 2012–2014 dataset
 
----
+### Recommendations
+-The higher the total snaps a player faced, the higher their risk is for a concussion. Establish player and position specific snap limits and consider shortening the NFL season or length of games to minimize number of repetitive contact.
+-Increase protections for cornerbacks, wide receivers, and safeties.
+-Explore personnel changes, such as moving to 10 players instead of 11 on punts, to reduce the rate of concussions.
+-Explore new tackling techniques to reduce helmet-to-body and helmet-to-helmet contact.
+-Surface type was not a strong indicator of lower-limb injuries. Further examination of the relationship between lower-limb injuries and surface type is needed.
+-Consider adapting the game of football to reduce contact, investigating changes similar to the rules established in flag football. 
 
-## Recommendations
 
-| Recommendation | Supporting Evidence |
-|---|---|
-| Implement per-player snap count or playtime limits | Average playtime before injury is a top-3 predictive feature |
-| Increase positional protection for CBs, WRs, and safeties | These positions had the highest concussion rates in the dataset |
-| Investigate reducing punt unit personnel (e.g., 10 vs. 11 players) | Tackling/blocking and friendly fire are primary concussion drivers on punts |
-| Explore coaching interventions for special teams technique | Helmet-to-body on tackles and helmet-to-helmet on blocks are addressable contact patterns |
-| Deprioritize turf replacement as a near-term safety investment | Surface type did not produce a strong injury relationship in this analysis |
-| Collect and analyze return-to-play data post-concussion | CTE risk and repeated concussion likelihood are not captured in current datasets |
+### Limitations
+-All three datasets were small (range: 37-390 entries). Machine learning models were  prone to overfitting and produced less accurate results.
+-Most recent dataset used was published in 2019. Recent seasons' data, especially since the adaption of the dynamic kickoff, helmet re-design, and new penalties for contact to players head and lower bodies, would provide more accurate insights.
 
----
 
-## Limitations
+### Future Work
+-Collect larger and more recent injury datasets to improve model accuracy.
+-Conduct longitudinal study of injury trends in the NFL.
+-Implement risk assessment models to determine what features result in highest risk of injury.
+-Implement A/B testing of tackling techniques to determine effectiveness.
+-Collect and analyze data regarding the NFL’s return-to-play policy and consequential  risk of developing CTE.
 
-- All datasets are small (37–390 records), making models prone to overfitting — particularly `Video_Review`
-- Most recent dataset was published in 2019, predating the dynamic kickoff, updated helmet standards, and new contact penalties
-- Findings are associative, not causal
-- The `Concussion` dataset includes identifiable player information; all PII except position was dropped prior to analysis
 
----
+### How to Run
+1. Clone the repository:
 
-## Future Work
-
-- Collect larger, more recent datasets covering post-2019 rule changes
-- A/B testing of coaching interventions (e.g., new blocking/tackling techniques)
-- Longitudinal injury trend analysis across full NFL seasons
-- Risk stratification modeling by position and play type
-- Return-to-play policy analysis and CTE risk modeling
-
----
-
-## How to Run
-
-1. Clone the repo:
    ```bash
    git clone https://github.com/yourusername/nfl-injury-prediction-capstone.git
    cd nfl-injury-prediction-capstone
    ```
 
 2. Install dependencies:
+
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Download the datasets from Kaggle (see `data/README.md`) and place them in the `data/` folder.
+3. Launch Jupyter Notebook:
 
-4. Open the notebook:
    ```bash
-   jupyter notebook notebooks/modeling_notebook.ipynb
+   jupyter notebook
    ```
 
-**References**
+4. Navigate to the `notebooks/` directory and run the notebooks to reproduce the analysis.
+
+**The datasets used in this project are available through Kaggle. Please see the **Datasets** section in this report for download sources.**
+
+
+### References 
 Abdi, H. (2010). Partial least squares regression and projection on latent structure       
    regression (PLS Regression). WIREs Computational Statistics, 2(1), 97-106.          
    https://doi.org/10.1002/wics.51   
