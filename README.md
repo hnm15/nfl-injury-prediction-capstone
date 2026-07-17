@@ -149,6 +149,8 @@ A total of 18 different machine learning models were evaluated in this project.
 *The datasets used in this project are available through Kaggle. Please see the **Datasets** section in this report for download sources.*
 
 
+
+
 ### References
 Abdi, H. (2010). *Partial least squares regression and projection on latent structure regression (PLS regression).* *WIREs Computational Statistics, 2*(1), 97–106. https://doi.org/10.1002/wics.51
 
