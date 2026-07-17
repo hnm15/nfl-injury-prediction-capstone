@@ -146,33 +146,26 @@ A total of 18 different machine learning models were evaluated in this project.
 
 4. Navigate to the `notebooks/` directory and run the notebooks to reproduce the analysis.
 
-**The datasets used in this project are available through Kaggle. Please see the **Datasets** section in this report for download sources.**
+*The datasets used in this project are available through Kaggle. Please see the **Datasets** section in this report for download sources.*
 
 
-### References 
-Abdi, H. (2010). Partial least squares regression and projection on latent structure       
-   regression (PLS Regression). WIREs Computational Statistics, 2(1), 97-106.          
-   https://doi.org/10.1002/wics.51   
+### References
+Abdi, H. (2010). *Partial least squares regression and projection on latent structure regression (PLS regression).* *WIREs Computational Statistics, 2*(1), 97–106. https://doi.org/10.1002/wics.51
 
-Grashow R., Shaffer-Pancyzk TV., Dairi I., Lee, H., Marengi, D., Baker, J., Weisskop, M. G., 
-   Speizer, F. E., Whittington, A. J., Taylor, H. A., Keating, D., Tenforde, D., Guseh, J. S.,    Wasfy, M. M., Zafonte, R., Baggish, A. (2023). 
-Healthspan and chronic disease burden among    young adult and middle-aged male former American-style professional football players.          British Journal of Sports Medicine, 57(3), 166-171. 
-Kaggle. (2021). Concussions in the NFL (2012-2014). Kaggle. 
-   https://www.kaggle.com/datasets/rishidamarla/concussions-in-the-nfl-20122014/data 
-Kaggle. (2019). NFL 1st and Future. Kaggle. 
-   https://www.kaggle.com/competitions/nfl-playing-surface-analytics/data
-Kaggle. (2019). NFL punt analytics competition dataset. Kaggle. 
-   https://www.kaggle.com/competitions/NFL-Punt-Analytics-Competition/overview
-Logistic Regression and regularization: Avoiding overfitting and improving generalization. 
-   (2023, January 5). Medium. Retrieved June 29, 2025.            
-   https://medium.com/@rithpansanga/logistic-regression-and-regularization-avoiding
-   overfitting-   and-improving-generalization-e9afdcddd09d 
-NFL Football Operations. (2025). Concussions Decrease to Historic Low in 2024 NFL Season. 
-   National Football League. https://operations.nfl.com/updates/football-ops/concussions-decrease-to-historic-low-in-2024-nfl-season/ 
-O’Malley, K (2025, February 7). There’s a way to deal with brain injuries in football. It      
-   isn’t 
-   safety gear. Harvard Public Health. https://harvardpublichealth.org/policy-practice/the-       nfls-concussion-solutions-are-an-illusion/ 
-Scikit-learn. (n.d.). Principal Component Regression vs Partial Least Squares Regression. 
-   https://scikit-learn.org/stable/auto_examples/cross_decomposition/plot_pcr_vs_pls.html 
-The Pennsylvania State University (n.d.). Combining Clusters in the Agglomerative Approach 
-   [Lecture Notes]. https://online.stat.psu.edu/stat505/lesson/14/14.4 
+Grashow, R., Shaffer-Panczyk, T. V., Dairi, I., Lee, H., Marengi, D., Baker, J., Weisskopf, M. G., Speizer, F. E., Whittington, A. J., Taylor, H. A., Keating, D., Tenforde, D., Guseh, J. S., Wasfy, M. M., Zafonte, R., & Baggish, A. (2023). *Healthspan and chronic disease burden among young adult and middle-aged male former American-style professional football players.* *British Journal of Sports Medicine, 57*(3), 166–171.
+
+Kaggle. (2019). *NFL 1st and Future.* Kaggle. https://www.kaggle.com/competitions/nfl-playing-surface-analytics/data
+
+Kaggle. (2019). *NFL punt analytics competition dataset.* Kaggle. https://www.kaggle.com/competitions/NFL-Punt-Analytics-Competition/overview
+
+Kaggle. (2021). *Concussions in the NFL (2012–2014).* Kaggle. https://www.kaggle.com/datasets/rishidamarla/concussions-in-the-nfl-20122014/data
+
+*Logistic regression and regularization: Avoiding overfitting and improving generalization.* (2023, January 5). *Medium.* Retrieved June 29, 2025, from https://medium.com/@rithpansanga/logistic-regression-and-regularization-avoiding-overfitting-and-improving-generalization-e9afdcddd09d
+
+NFL Football Operations. (2025). *Concussions decrease to historic low in 2024 NFL season.* National Football League. https://operations.nfl.com/updates/football-ops/concussions-decrease-to-historic-low-in-2024-nfl-season/
+
+O'Malley, K. (2025, February 7). *There's a way to deal with brain injuries in football. It isn't safety gear.* *Harvard Public Health.* https://harvardpublichealth.org/policy-practice/the-nfls-concussion-solutions-are-an-illusion/
+
+Scikit-learn. (n.d.). *Principal component regression vs partial least squares regression.* https://scikit-learn.org/stable/auto_examples/cross_decomposition/plot_pcr_vs_pls.html
+
+The Pennsylvania State University. (n.d.). *Combining clusters in the agglomerative approach* [Lecture notes]. https://online.stat.psu.edu/stat505/lesson/14/14.4
