@@ -1,5 +1,8 @@
 # Injury Prediction and Player Safety in the NFL
 
+### Key Result: 
+The Concussion dataset performed the best in this project. It produced an RMSE of 0.3498 using the Partial Least Squares Regression (PLSR) model, meeting the success criteria threshold. When using Decision Tree & Random Forest, the 'Concussion' dataset also performed well producing a 90.6% CV accuracy (decision tree) and 84.0% (random forest), both well above the 70% success criteria threshold.
+
 ### Overview
 This capstone project was completed as part of my Master’s Degree in Data Science at Boston University (August 2024 – December 2025). Using publicly available National Football League (NFL) data, the project applies data analysis and predictive modeling to examine factors that are associated with player health and safety. The analysis identifies patterns in common injuries and investigates aspects of gameplay that may increase a player’s risk of injury, with a particular focus on concussions and lower-body injuries. The findings of this project were in turn used to make recommendations to the NFL that involved rule changes and new coaching techniques.
 
